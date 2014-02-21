@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8025A449-CD2B-4AB6-B5EB-64180C7C36E3}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MPC_Remote</RootNamespace>
+    <AssemblyName>MPC_Remote</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>MPC_Remote.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>MPC_Remote.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>5.0.31017.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Coding4Fun.Phone.Controls.Toolkit">
+      <HintPath>..\packages\Coding4Fun.Phone.Controls.TimeSpan.1.6.1\lib\sl4-windowsphone71\Coding4Fun.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Controls" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit">
+      <HintPath>..\packages\SilverlightToolkitWP.4.2012.10.9\lib\sl4-windowsphone71\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Interop">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="mscorlib.extensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddSettings.xaml.cs">
+      <DependentUpon>AddSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\AppSettings.cs" />
+    <Compile Include="Browse.xaml.cs">
+      <DependentUpon>Browse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\BrowseItem.cs" />
+    <Compile Include="Classes\CommandClient.cs" />
+    <Compile Include="Classes\ConnectionProfile.cs" />
+    <Compile Include="Classes\MPCHCCommand.cs" />
+    <Compile Include="Converters\DataTemplateSelector.cs" />
+    <Compile Include="Converters\PlayPauseButtonConverter.cs" />
+    <Compile Include="Info.xaml.cs">
+      <DependentUpon>Info.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Converters\SelectedSettingToVisibilityConverter.cs" />
+    <Compile Include="Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Status.cs" />
+    <Compile Include="Converters\ThemedImageConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="AddSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Browse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Info.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\dark\appbar.connection.wifi.png" />
+    <Content Include="images\dark\appbar.home.png" />
+    <Content Include="images\dark\appbar.info.png" />
+    <Resource Include="images\light\appbar.info.png" />
+    <Resource Include="images\dark\appbar.selected.rest.png" />
+    <Content Include="images\light\appbar.connection.wifi.png" />
+    <Resource Include="images\light\appbar.selected.rest.png" />
+    <Resource Include="images\light\appbar.home.png" />
+    <Content Include="images\logo\logo_173x173_marketplace.png" />
+    <Content Include="images\logo\logo_300x300.png" />
+    <Content Include="images\logo\logo_400x400.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
+    <Resource Include="images\dark\appbar.add.rest.png" />
+    <Content Include="images\dark\appbar.back.rest.png" />
+    <Resource Include="images\dark\appbar.basecircle.rest.png" />
+    <Resource Include="images\dark\appbar.cancel.rest.png" />
+    <Resource Include="images\dark\appbar.check.rest.png" />
+    <Resource Include="images\dark\appbar.close.rest.png" />
+    <Content Include="images\dark\appbar.delete.rest.png" />
+    <Resource Include="images\dark\appbar.download.rest.png" />
+    <Resource Include="images\dark\appbar.edit.rest.png" />
+    <Resource Include="images\dark\appbar.favs.addto.rest.png" />
+    <Resource Include="images\dark\appbar.favs.rest.png" />
+    <Resource Include="images\dark\appbar.feature.camera.rest.png" />
+    <Resource Include="images\dark\appbar.feature.email.rest.png" />
+    <Resource Include="images\dark\appbar.feature.search.rest.png" />
+    <Content Include="images\dark\appbar.feature.settings.rest.png" />
+    <Resource Include="images\dark\appbar.feature.video.rest.png" />
+    <Content Include="images\dark\appbar.folder.rest.png" />
+    <Resource Include="images\dark\appbar.minus.rest.png" />
+    <Resource Include="images\dark\appbar.new.rest.png" />
+    <Resource Include="images\dark\appbar.next.rest.png" />
+    <Resource Include="images\dark\appbar.overflowdots.png" />
+    <Content Include="images\dark\appbar.questionmark.rest.png" />
+    <Resource Include="images\dark\appbar.refresh.rest.png" />
+    <Content Include="images\dark\appbar.save.rest.png" />
+    <Resource Include="images\dark\appbar.share.rest.png" />
+    <Resource Include="images\dark\appbar.stop.rest.png" />
+    <Resource Include="images\dark\appbar.sync.rest.png" />
+    <Resource Include="images\dark\appbar.transport.ff.rest.png" />
+    <Resource Include="images\dark\appbar.transport.pause.rest.png" />
+    <Resource Include="images\dark\appbar.transport.play.rest.png" />
+    <Resource Include="images\dark\appbar.transport.rew.rest.png" />
+    <Resource Include="images\dark\appbar.upload.rest.png" />
+    <Resource Include="images\light\appbar.add.rest.png" />
+    <Resource Include="images\light\appbar.back.rest.png" />
+    <Resource Include="images\light\appbar.basecircle.rest.png" />
+    <Resource Include="images\light\appbar.cancel.rest.png" />
+    <Resource Include="images\light\appbar.check.rest.png" />
+    <Resource Include="images\light\appbar.close.rest.png" />
+    <Resource Include="images\light\appbar.delete.rest.png" />
+    <Resource Include="images\light\appbar.download.rest.png" />
+    <Resource Include="images\light\appbar.edit.rest.png" />
+    <Resource Include="images\light\appbar.favs.addto.rest.png" />
+    <Resource Include="images\light\appbar.favs.rest.png" />
+    <Resource Include="images\light\appbar.feature.camera.rest.png" />
+    <Resource Include="images\light\appbar.feature.email.rest.png" />
+    <Resource Include="images\light\appbar.feature.search.rest.png" />
+    <Resource Include="images\light\appbar.feature.settings.rest.png" />
+    <Resource Include="images\light\appbar.feature.video.rest.png" />
+    <Resource Include="images\light\appbar.folder.rest.png" />
+    <Resource Include="images\light\appbar.minus.rest.png" />
+    <Resource Include="images\light\appbar.new.rest.png" />
+    <Resource Include="images\light\appbar.next.rest.png" />
+    <Resource Include="images\light\appbar.overflowdots.png" />
+    <Resource Include="images\light\appbar.questionmark.rest.png" />
+    <Resource Include="images\light\appbar.refresh.rest.png" />
+    <Resource Include="images\light\appbar.save.rest.png" />
+    <Resource Include="images\light\appbar.share.rest.png" />
+    <Resource Include="images\light\appbar.stop.rest.png" />
+    <Resource Include="images\light\appbar.sync.rest.png" />
+    <Resource Include="images\light\appbar.transport.ff.rest.png" />
+    <Resource Include="images\light\appbar.transport.pause.rest.png" />
+    <Resource Include="images\light\appbar.transport.play.rest.png" />
+    <Resource Include="images\light\appbar.transport.rew.rest.png" />
+    <Resource Include="images\light\appbar.upload.rest.png" />
+    <Resource Include="images\light\appbar.volume.mute.rest.png" />
+    <Resource Include="images\dark\appbar.volume.mute.rest.png" />
+    <Resource Include="images\light\maximize.png" />
+    <Resource Include="images\dark\maximize.png" />
+    <Resource Include="images\logo\logo_173x173.png" />
+    <Resource Include="images\logo\logo_200x200.png" />
+    <Resource Include="images\logo\logo_62x62.png" />
+    <Resource Include="images\logo\logo_99x99.png" />
+    <Resource Include="images\dark\appbar.transport.fast.ff.rest.png" />
+    <Resource Include="images\dark\appbar.transport.fast.rew.rest.png" />
+    <Resource Include="images\light\appbar.transport.fast.ff.rest.png" />
+    <Resource Include="images\light\appbar.transport.fast.rew.rest.png" />
+    <Resource Include="images\light\appbar.transport.stop.rest.png" />
+    <Resource Include="images\dark\appbar.transport.stop.rest.png" />
+    <Content Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>
