@@ -7,6 +7,21 @@ Description
 =======
 MPC-HC Remote is the most downloaded and best rated remote control for Media Player Classic - Home Cinema in the Windows Phone Store. It provides an simple interface to control the player and browse the filesystem.
 
+To Do
+=======
+* Build one central library
+* Auto detection of MPC-HC's in the local network
+* Additional buttons (extended buttons page?)
+  * $i seconds step for-/backward
+  * Subtitle on/off
+  * Stop button
+* Build favorite folder list for the browse page
+* Scroll filename on browse list if the name is too long
+* Build local playlist
+* Show a proper tutorial on the first start of the app
+* Widescreen view
+* Nicer design
+
 Changelog
 =======
 1. Changes from 1.0 to 1.2:
