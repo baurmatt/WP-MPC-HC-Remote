@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
-  <App xmlns="" ProductID="{ec5d6f46-2158-4c02-84d0-18d3aa1344a2}" Title="MPC-HC Remote" RuntimeType="Silverlight" Version="1.5.0.0" Genre="apps.normal" Author="Matthias Baur" Description="Sample description" Publisher="Matthias Baur" BitsPerPixel="16">
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
+  <DefaultLanguage xmlns="" code="" />
+  <App xmlns="" ProductID="{ec5d6f46-2158-4c02-84d0-18d3aa1344a2}" Title="MPC-HC Remote" RuntimeType="Silverlight" Version="1.5.0.0" Genre="apps.normal" Author="Matthias Baur" Description="Sample description" Publisher="Matthias Baur" BitsPerPixel="16" PublisherID="{9b3a5908-2594-481f-977d-25e3ee0049e7}">
     <IconPath IsRelative="true" IsResource="false">images\logo\logo_62x62.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -10,12 +11,23 @@
     </Tasks>
     <Tokens>
       <PrimaryToken TokenID="MPC_RemoteToken" TaskName="_default">
-        <TemplateType5>
-          <BackgroundImageURI IsRelative="true" IsResource="false">images\logo\logo_173x173.png</BackgroundImageURI>
+        <TemplateFlip>
+          <SmallImageURI IsResource="false" IsRelative="true">images\logo\logo_173x173.png</SmallImageURI>
           <Count>0</Count>
+          <BackgroundImageURI IsResource="false" IsRelative="true">images\logo\logo_173x173.png</BackgroundImageURI>
           <Title>MPC-HC Remote</Title>
-        </TemplateType5>
+          <BackContent></BackContent>
+          <BackBackgroundImageURI></BackBackgroundImageURI>
+          <BackTitle></BackTitle>
+          <DeviceLockImageURI></DeviceLockImageURI>
+          <HasLarge>false</HasLarge>
+        </TemplateFlip>
       </PrimaryToken>
     </Tokens>
+    <ScreenResolutions>
+      <ScreenResolution Name="ID_RESOLUTION_WVGA" />
+      <ScreenResolution Name="ID_RESOLUTION_WXGA" />
+      <ScreenResolution Name="ID_RESOLUTION_HD720P" />
+    </ScreenResolutions>
   </App>
 </Deployment>
